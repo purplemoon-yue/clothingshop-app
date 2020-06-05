@@ -2,6 +2,7 @@
 /config/
 /dist/
 /*.js
-/test/unit/coverage/
+/tests/
 /src/assets/
 /src/style/icon/
+/node_modules/
