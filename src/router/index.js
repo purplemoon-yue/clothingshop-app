@@ -13,6 +13,10 @@ export const constantRoutes = [
       {
         path: 'home',
         component: () => import('@/views/home')
+      },
+      {
+        path: 'search',
+        component: () => import('@/views/search')
       }
     ]
   },

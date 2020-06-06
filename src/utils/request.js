@@ -15,7 +15,6 @@ const service = axios.create({
 service.interceptors.request.use(
   config => {
     config.headers['credential'] = sessionStorage.getItem('credential') || ''
-    // config.headers['language'] = store.getters.language
     return config
   },
   error => {
