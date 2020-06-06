@@ -26,14 +26,6 @@ module.exports = {
     config.resolve.alias.set('components', resolve('src/components'))
 
   },
-  // configureWebpack: config => {
-  //   const isProd = process.env.NODE_ENV === 'production'
-  //   const plugins = []
-  //   config.plugins = [
-  //     ...config.plugins,
-  //     ...plugins
-  //   ]
-  // },
   pages: {
     index: {
       entry: [
