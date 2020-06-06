@@ -1,12 +1,15 @@
 <template>
-  <router-view/>
+  <div>
+    <p>404</p>
+  </div>
 </template>
 
 <script>
   export default {
-    name: 'App'
+    name: 'NotFound'
   }
 </script>
 
-<style>
+<style scoped>
+
 </style>
