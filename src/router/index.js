@@ -2,6 +2,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomePage from 'components/homePage'
+import Home from './home'
+import UserPage from './userPage'
 
 Vue.use(VueRouter)
 
@@ -9,15 +11,9 @@ export const constantRoutes = [
   {
     path: '/',
     component: HomePage,
+    redirect: '/home',
     children: [
-      {
-        path: 'home',
-        component: () => import('@/views/home')
-      },
-      {
-        path: 'search',
-        component: () => import('@/views/search')
-      }
+      Home, UserPage
     ]
   },
   {
