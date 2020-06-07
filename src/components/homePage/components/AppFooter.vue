@@ -62,6 +62,13 @@
         ]
       }
     },
+    created() {
+      const path = this.$route.path
+      const arr = this.tabbarItem.filter(item => item.path === path)
+      if (arr.length > 0) {
+        this.tabActive = arr[0].itemName
+      }
+    },
     methods: {
       goTo(item) {
         this.tabActive = item.itemName
