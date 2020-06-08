@@ -4,16 +4,16 @@
 'use strict'
 
 import Mock from 'mockjs'
-import lowdb from 'lowdb'
-import LocalStorage from 'lowdb/adapters/LocalStorage'
 
-const adapter = new LocalStorage('config')
-const db = lowdb(adapter)
-db.set('rere', {
-  d: 'sdsds'
-}).write()
+// import lowdb from 'lowdb'
+// import LocalStorage from 'lowdb/adapters/LocalStorage'
+// const adapter = new LocalStorage('config')
+// const db = lowdb(adapter)
+// db.set('rere', {
+//   d: 'sdsds'
+// }).write()
 
-// import mocksApi from './mocks-api'
+import mocksApi from './mocks-api'
 
 // const responseFake = (url, type, respond) => {
 //   return {
@@ -25,22 +25,9 @@ db.set('rere', {
 //   }
 // }
 
-// mocksApi.map(route => {
-//   Mock.mock(route.url, route.type, route.response)
-//   // return responseFake(route.url, route.type, route.response)
-// })
-
-// Mock.mock('/api/user/login', 'post', config => {
-//   console.log(config.body)
-//   return {
-//     code: 1000,
-//     credential: '123434467676'
-//   }
-// })
-
-Mock.mock('/api/user/login', 'post', {
-      'array|1': ['ASS', 'FFF', 'FKK']
-    }
-)
+mocksApi.map(route => {
+  Mock.mock(new RegExp(`${route.url}`), route.type, route.response)
+  // return responseFake(route.url, route.type, route.response)
+})
 
 export default Mock
