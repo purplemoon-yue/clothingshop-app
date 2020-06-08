@@ -10,6 +10,10 @@ const userAdapter = new LocalStorage('_users')
 const userDB = lowdb(userAdapter)
 import { users } from './data/user.json'
 
+userDB.defaults({
+  users: []
+}).write()
+
 users.forEach(user => {
   userDB.get('users').push(user).write()
 })

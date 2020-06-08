@@ -17,7 +17,7 @@ export default [
       const { username, password } = JSON.parse(config.body)
       console.log(username)
       console.log(password)
-      console.log(db.find(username).value())
+      console.log(db.get('users').find({ username: username }).value())
       return {
         code: 1000,
         credential: '123434467676'

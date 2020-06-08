@@ -40,8 +40,8 @@
     methods: {
       onSubmit() {
         login({
-          password: this.password,
-          username: this.username
+          password: 'qqq',
+          username: 'OLIVER'
         }).then(res => {
           console.log(res)
         }).catch(err => {
